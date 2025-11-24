@@ -2,7 +2,7 @@ import { useRef } from "react";
 import HeroSection from "./sections/HeroSection";
 
 // Navbar
-import NavBar from "./components/navbar/Navbar";
+import NavBar from "./components/navbar/NavBar";
 import useScrollToSection from "./hooks/useScrollToSection";
 
 function App() {
