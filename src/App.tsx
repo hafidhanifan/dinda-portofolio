@@ -18,7 +18,11 @@ function App() {
     <>
       <NavBar sectionRefs={sectionRefs} scrollTo={scrollTo}></NavBar>
 
-      <main className="space-y-32"></main>
+      <main className="space-y-32">
+        <section ref={heroRef}>
+          <HeroSection></HeroSection>
+        </section>
+      </main>
     </>
   );
 }
