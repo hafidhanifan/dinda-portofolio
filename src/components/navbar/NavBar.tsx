@@ -21,7 +21,6 @@ export default function NavBar({ sectionRefs, scrollTo }: Props) {
         <NavbarItem
           key={item.id}
           label={item.label}
-          icon={item.icon}
           isActive={active === item.id}
           onClick={() => handleClick(item.id)}
         />

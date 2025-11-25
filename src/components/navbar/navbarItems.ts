@@ -1,6 +1,6 @@
 export const navItems = [
-  { id: "hero", label: "Home", icon: "🏠" },
-  { id: "about", label: "About", icon: "ℹ️" },
-  { id: "work", label: "Work", icon: "💼" },
-  { id: "contact", label: "Contact", icon: "✉️" },
+  { id: "hero", label: "Home" },
+  { id: "portfolio", label: "Portfolio" },
+  { id: "about", label: "About Me" },
+  { id: "contact", label: "Contact" },
 ];
