@@ -8,7 +8,7 @@ import useScrollToSection from "./hooks/useScrollToSection";
 function App() {
   const scrollTo = useScrollToSection();
 
-  const heroRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLElement | null>(null);
 
   const sectionRefs = {
     hero: heroRef,

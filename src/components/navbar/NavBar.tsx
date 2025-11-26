@@ -3,8 +3,8 @@ import NavbarItem from "./NavbarItem";
 import { navItems } from "./navbarItems";
 
 interface Props {
-  sectionRefs: Record<string, React.RefObject<HTMLElement>>;
-  scrollTo: (ref: React.RefObject<HTMLElement>) => void;
+  sectionRefs: Record<string, React.RefObject<HTMLElement | null>>;
+  scrollTo: (ref: React.RefObject<HTMLElement | null>) => void;
 }
 
 export default function NavBar({ sectionRefs, scrollTo }: Props) {
