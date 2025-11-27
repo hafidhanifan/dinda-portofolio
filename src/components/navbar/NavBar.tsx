@@ -16,7 +16,7 @@ export default function NavBar({ sectionRefs, scrollTo }: Props) {
   };
 
   return (
-    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-white/80 backdrop-blur-md shadow-lg rounded-full px-6 py-3 flex gap-6 z-50 border border-red-200">
+    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-white/80 backdrop-blur-md shadow-lg rounded-full px-6 py-3 flex gap-6 z-50 border border-red-200 border-blue-200">
       {navItems.map((item) => (
         <NavbarItem
           key={item.id}
