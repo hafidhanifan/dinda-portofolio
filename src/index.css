@@ -3,3 +3,17 @@
 body {
   font-family: "Quicksand", sans-serif;
 }
+
+@theme {
+  --color-bg: 255 255 255;
+  --color-text: 17 24 39;
+  --color-primary: 79 70 229;
+  --color-primary-foreground: 255 255 255;
+}
+
+@theme dark {
+  --color-bg: 17 24 39;
+  --color-text: 241 245 249;
+  --color-primary: 99 102 241;
+  --color-primary-foreground: 255 255 255;
+}
