@@ -17,3 +17,17 @@ body {
   --color-primary: 99 102 241;
   --color-primary-foreground: 255 255 255;
 }
+
+/* Utilities using the variables (optional helpers) */
+.bg-theme {
+  background-color: rgb(var(--color-bg));
+}
+.text-theme {
+  color: rgb(var(--color-text));
+}
+.btn-primary {
+  background-color: rgb(var(--color-primary));
+  color: rgb(var(--color-primary-foreground));
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
