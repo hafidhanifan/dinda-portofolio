@@ -8,7 +8,7 @@ export const setHtmlThemeClass = (theme: Theme) => {
   }
 };
 
-export  getInitialTheme = (): Theme => {
+export const getInitialTheme = (): Theme => {
   try {
     const stored = localStorage.getItem("theme") as Theme | null;
     if (stored) return stored;
