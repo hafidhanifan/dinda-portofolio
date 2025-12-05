@@ -24,7 +24,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     setHtmlThemeClass(theme);
     try {
       localStorage.setItem("theme", theme);
-    } catch {}
+    } catch (error) {
+      console.error("Error saving theme to local storage:", error);
+    }
   }, [theme]);
 
   const toggle = () => setThemeState((t) => (t === "dark" ? "light" : "dark"));
