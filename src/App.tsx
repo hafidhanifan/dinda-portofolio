@@ -25,15 +25,14 @@ function App() {
           <ThemeToggle />
         </header>
 
-        <section ref={heroRef}>
-          <HeroSection></HeroSection>
-        </section>
-
         <h1 className="text-2xl font-bold mb-4">Current theme: {theme}</h1>
         <button className="btn-primary">Primary button</button>
         <p className="mt-4">
           Contoh teks. Coba toggle theme dan lihat perubahan warna.
         </p>
+        <section ref={heroRef}>
+          <HeroSection></HeroSection>
+        </section>
       </main>
     </>
   );
