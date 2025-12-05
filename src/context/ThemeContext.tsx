@@ -1,6 +1,6 @@
 // src/context/ThemeContext.tsx
 import React, { createContext, useEffect, useState } from "react";
-import { getInitialTheme, setHtmlThemeClass, Theme } from "../utils/theme";
+import type { getInitialTheme, setHtmlThemeClass, Theme } from "../utils/theme";
 
 interface ThemeContextValue {
   theme: Theme;
