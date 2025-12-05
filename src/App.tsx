@@ -20,10 +20,11 @@ function App() {
     <>
       <NavBar sectionRefs={sectionRefs} scrollTo={scrollTo}></NavBar>
 
-      <main className="space-y-32">
+      <main className="space-y-32 bg-theme text-theme transition-colors duration-200">
         <header className="p-4 flex justify-end">
           <ThemeToggle />
         </header>
+
         <section ref={heroRef}>
           <HeroSection></HeroSection>
         </section>
