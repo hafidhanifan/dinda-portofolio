@@ -6,7 +6,7 @@ body {
 }
 
 /* src/index.css (tambahkan jika belum ada) */
-:root{
+:root {
   --color-bg: 255 255 255;
   --color-text: 17 24 39;
   --color-primary: 79 70 229;
@@ -21,45 +21,17 @@ html.dark {
 }
 
 /* helper classes */
-.bg-theme { background-color: rgb(var(--color-bg)); }
-.text-theme { color: rgb(var(--color-text)); }
-
-/* utility khusus untuk tombol primary */
-.btn-primary {
-  background-color: rgb(var(--color-primary));
-  color: rgb(var(--color-primary-foreground));
-  padding: .5rem 1rem;
-  border-radius: .5rem;
-}
-
-
-
-
-
-/* @theme {
-  --color-bg: 255 255 255;
-  --color-text: 17 24 39;
-  --color-primary: 79 70 229;
-  --color-primary-foreground: 255 255 255;
-}
-
-@theme dark {
-  --color-bg: 17 24 39;
-  --color-text: 241 245 249;
-  --color-primary: 99 102 241;
-  --color-primary-foreground: 255 255 255;
-}
-
-/* Utilities using the variables (optional helpers) */
 .bg-theme {
   background-color: rgb(var(--color-bg));
 }
 .text-theme {
   color: rgb(var(--color-text));
 }
+
+/* utility khusus untuk tombol primary */
 .btn-primary {
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-primary-foreground));
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-} */
+}
