@@ -53,10 +53,17 @@ export default function NavBar({ sectionRefs, scrollTo }: Props) {
               ease: "easeInOut",
             }}
           >
-            <NavbarItem 
+            <NavbarItem
               label={item.label}
-            >
-
+              icon={item.icon}
+              isActive={active === item.id}
+              isHovered={hoveredId === item.id}
+              onClick={() => handleClick(item.id)}
+              // set state saat hover mulai
+              onHoverStart={() => setHoverId(item.id)}
+              // reset state saat hover selesai
+              onHoverEnd={() => setHoverId(null)}
+            />
           </motion.div>
         ))}
       </div>
