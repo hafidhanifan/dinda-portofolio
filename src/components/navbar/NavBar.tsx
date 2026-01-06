@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "motion";
 import NavbarItem from "./NavbarItem";
 import { navItems } from "./navbarItems";
+import { GiDuration } from "react-icons/gi";
 
 interface Props {
   sectionRefs: Record<string, React.RefObject<HTMLElement | null>>;
@@ -13,7 +14,7 @@ export default function NavBar({ sectionRefs, scrollTo }: Props) {
   const [active, setActive] = useState("hero");
 
   // state untuk item yang sedang di-hover
-  const [hoverId, setHoverId] = useState<string | null>(null);
+  const [hoveredId, setHoverId] = useState<string | null>(null);
 
   const handleClick = (id: string) => {
     setActive(id);
@@ -28,14 +29,37 @@ export default function NavBar({ sectionRefs, scrollTo }: Props) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      {navItems.map((item) => (
-        <NavbarItem
-          key={item.id}
-          label={item.label}
-          isActive={active === item.id}
-          onClick={() => handleClick(item.id)}
-        />
-      ))}
+      <div className="flex items-center">
+        {navItems.map((item, index) => (
+          <motion.div
+            key={item.id}
+            // animasi jarak antar item saat ada yang di-hover
+            animate={{
+              // jika item ini di-hover, beri margin kiri dan kanan
+              marginLeft:
+                hoveredId === item.id ||
+                (index > 0 && hoveredId === navItems[index - 1].id)
+                  ? "8px"
+                  : "0px",
+              marginRight:
+                hoveredId === item.id ||
+                (index < navItems.length - 1 &&
+                  hoveredId === navItems[index + 1].id)
+                  ? "8px"
+                  : "0px",
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+          >
+            <NavbarItem 
+              label={item.label}
+            >
+
+          </motion.div>
+        ))}
+      </div>
     </motion.nav>
   );
 }
