@@ -1,6 +1,15 @@
+import { Home, User, Briefcase, Mail } from "lucide-react";
+
+// definisikan tipe data untuk nav item
+export interface NavItemType {
+  id: string;
+  label: string;
+  icon: React.ComponentType<{ size?: number }>; // tipe untuk icon dari lucide-react
+}
+
 export const navItems = [
-  { id: "hero", label: "Home" },
-  { id: "profile", label: "Profile" },
-  { id: "portofolio", label: "Portofolio" },
-  { id: "contact", label: "Contact" },
+  { id: "hero", label: "Home", icon: Home },
+  { id: "profile", label: "Profile", icon: User },
+  { id: "portofolio", label: "Portofolio", icon: Briefcase },
+  { id: "contact", label: "Contact", icon: Mail },
 ];
