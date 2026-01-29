@@ -7,7 +7,7 @@ body {
 
 /* src/index.css (tambahkan jika belum ada) */
 :root {
-  --color-bg: 255 255 255;
+  --color-bg: 250 247 243;
   --color-text: 17 24 39;
   --color-primary: 79 70 229;
   --color-primary-foreground: 255 255 255;
@@ -26,12 +26,4 @@ html.dark {
 }
 .text-theme {
   color: rgb(var(--color-text));
-}
-
-/* utility khusus untuk tombol primary */
-.btn-primary {
-  background-color: rgb(var(--color-primary));
-  color: rgb(var(--color-primary-foreground));
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
 }
