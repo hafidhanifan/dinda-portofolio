@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { motion } from "motion";
+import { motion } from "framer-motion";
 import NavbarItem from "./NavbarItem";
 import { navItems } from "./navbarItems";
-import { GiDuration } from "react-icons/gi";
 
 interface Props {
   sectionRefs: Record<string, React.RefObject<HTMLElement | null>>;
@@ -10,11 +9,8 @@ interface Props {
 }
 
 export default function NavBar({ sectionRefs, scrollTo }: Props) {
-  // state untuk item yang aktif (diklik)
   const [active, setActive] = useState("hero");
-
-  // state untuk item yang sedang di-hover
-  const [hoveredId, setHoverId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const handleClick = (id: string) => {
     setActive(id);
@@ -23,30 +19,29 @@ export default function NavBar({ sectionRefs, scrollTo }: Props) {
 
   return (
     <motion.nav
-      className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-white/80 backdrop-blur-md shadow-lg rounded-full px-6 py-3 flex gap-6 z-50 border border-gray-200"
-      // animasi saat navbar pertama kali muncul
+      className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-gray-800/40 backdrop-blur-md shadow-2xl rounded-full px-6 py-4 z-50 border border-white/10"
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         {navItems.map((item, index) => (
           <motion.div
             key={item.id}
-            // animasi jarak antar item saat ada yang di-hover
             animate={{
-              // jika item ini di-hover, beri margin kiri dan kanan
               marginLeft:
-                hoveredId === item.id ||
-                (index > 0 && hoveredId === navItems[index - 1].id)
-                  ? "8px"
-                  : "0px",
+                hoveredId === item.id
+                  ? "12px"
+                  : index > 0 && hoveredId === navItems[index - 1].id
+                    ? "12px"
+                    : "0px",
               marginRight:
-                hoveredId === item.id ||
-                (index < navItems.length - 1 &&
-                  hoveredId === navItems[index + 1].id)
-                  ? "8px"
-                  : "0px",
+                hoveredId === item.id
+                  ? "12px"
+                  : index < navItems.length - 1 &&
+                      hoveredId === navItems[index + 1].id
+                    ? "12px"
+                    : "0px",
             }}
             transition={{
               duration: 0.3,
@@ -59,10 +54,8 @@ export default function NavBar({ sectionRefs, scrollTo }: Props) {
               isActive={active === item.id}
               isHovered={hoveredId === item.id}
               onClick={() => handleClick(item.id)}
-              // set state saat hover mulai
-              onHoverStart={() => setHoverId(item.id)}
-              // reset state saat hover selesai
-              onHoverEnd={() => setHoverId(null)}
+              onHoverStart={() => setHoveredId(item.id)}
+              onHoverEnd={() => setHoveredId(null)}
             />
           </motion.div>
         ))}
