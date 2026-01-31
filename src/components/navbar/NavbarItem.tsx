@@ -41,7 +41,7 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
       {/* Button dengan HANYA icon */}
       <motion.button
         onClick={onClick}
-        className={`relative z-10 p-3 rounded-2xl transition-colors
+        className={`relative z-10 px-4 py-2 rounded-2xl transition-colors
           ${isActive ? "text-white" : "text-gray-400"}`}
         whileTap={{ scale: 0.95 }}
       >

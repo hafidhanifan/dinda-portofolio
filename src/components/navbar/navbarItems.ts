@@ -1,4 +1,4 @@
-import { Home, User, Briefcase, Mail } from "lucide-react";
+import { Home, User, Briefcase, Mail, Sun, Moon } from "lucide-react";
 
 // Kita definisikan tipe data untuk nav item
 export interface NavItemType {
@@ -14,3 +14,5 @@ export const navItems: NavItemType[] = [
   { id: "portofolio", label: "Portofolio", icon: Briefcase },
   { id: "contact", label: "Contact", icon: Mail },
 ];
+
+export { Sun, Moon };
