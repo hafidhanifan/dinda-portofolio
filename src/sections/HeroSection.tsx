@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center"
+      className="min-h-screen flex items-center justify-center border border-red-500"
     >
       <img
         src={heroImage}
