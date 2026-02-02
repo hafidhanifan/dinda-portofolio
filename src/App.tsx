@@ -1,6 +1,7 @@
 import { useRef } from "react";
-import HeroSection from "./sections/HeroSection";
 import ThemeToggle from "./components/theme/ThemeToggle";
+import HeroSection from "./sections/HeroSection";
+import AboutSection from "./sections/AboutSection";
 
 // Navbar
 import NavBar from "./components/navbar/NavBar";
@@ -9,9 +10,11 @@ import useScrollToSection from "./hooks/useScrollToSection";
 function App() {
   const scrollTo = useScrollToSection();
   const heroRef = useRef<HTMLElement | null>(null);
+  const aboutRef = useRef<HTMLElement | null>(null);
 
   const sectionRefs = {
     hero: heroRef,
+    about: aboutRef,
   };
 
   return (
@@ -25,6 +28,9 @@ function App() {
         <header ref={heroRef}>
           <HeroSection></HeroSection>
         </header>
+        <section ref={aboutRef}>
+          <AboutSection />
+        </section>
       </main>
     </>
   );
