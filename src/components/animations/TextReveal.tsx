@@ -4,16 +4,23 @@ import { motion, useScroll, useTransform } from "framer-motion";
 interface TextRevealProps {
   text: string;
   className?: string;
+  scrollProgress?: any; // Terima scroll progress dari parent
 }
 
-const TextReveal = ({ text, className = "" }: TextRevealProps) => {
+const TextReveal = ({
+  text,
+  className = "",
+  scrollProgress,
+}: TextRevealProps) => {
   const targetRef = useRef<HTMLDivElement>(null);
 
-  // Track scroll progress untuk section ini
-  const { scrollYProgress } = useScroll({
+  // Gunakan scrollProgress dari parent jika ada, kalau tidak pakai internal
+  const { scrollYProgress: internalProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"],
   });
+
+  const activeProgress = scrollProgress || internalProgress;
 
   // Split text menjadi array kata-kata
   const words = text.split(" ");
@@ -23,7 +30,7 @@ const TextReveal = ({ text, className = "" }: TextRevealProps) => {
       ref={targetRef}
       className={`flex min-h-screen items-center justify-center px-4 ${className}`}
     >
-      <p className="max-w-5xl text-center text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
+      <p className="max-w-2xl text-center text-2xl font-bold leading-tight sm:text-2xl sm:max-w-xl md:text-3xl lg:max-w-6xl lg:text-5xl">
         {words.map((word, wordIndex) => {
           // Hitung kapan kata ini mulai dan selesai reveal
           const start = wordIndex / words.length;
@@ -32,7 +39,7 @@ const TextReveal = ({ text, className = "" }: TextRevealProps) => {
           return (
             <Word
               key={wordIndex}
-              progress={scrollYProgress}
+              progress={activeProgress}
               range={[start, end]}
             >
               {word}

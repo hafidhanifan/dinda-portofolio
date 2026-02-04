@@ -31,6 +31,7 @@ function App() {
         <section ref={aboutRef}>
           <AboutSection />
         </section>
+        <section className="mt-[1000px]"></section>
       </main>
     </>
   );
